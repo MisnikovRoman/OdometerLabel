@@ -48,6 +48,9 @@ struct OneRollingNumberView: View {
         .onChange(of: target) { new in
             smartAnimate(from: target, to: new)
         }
+        .onAppear {
+            smartAnimate(from: .init(id: target.id, previous: 0, main: 0), to: target)
+        }
     }
     
     var totalOffset: CGFloat {
@@ -124,7 +127,7 @@ struct DEBUG_OneRollingNumberView: View {
     
     var body: some View {
         VStack {
-            Text("\(Int(target.lapTime))").font(.footnote).foregroundColor(.gray)
+            // Text("\(Int(target.lapTime))").font(.footnote).foregroundColor(.gray)
             OneRollingNumberView(target: target)
         }
     }
