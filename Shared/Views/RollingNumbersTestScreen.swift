@@ -35,9 +35,9 @@ struct RollingNumbersTestScreen: View {
                 TextField("Число", text: $text, prompt: nil)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 Button("Animate") {
-//                    withAnimation(.easeInOut(duration: 1.0)) {
+                    withAnimation(.easeInOut(duration: 1.0)) {
                         selectedNumber = Int(text) ?? 7
-//                    }
+                    }
                 }
             }
         }.padding()

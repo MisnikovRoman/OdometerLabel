@@ -10,8 +10,10 @@ extension Int {
         var targets = [TargetNumber]()
         var step = 0
         
+        let maxId = String(self).count - 1
+        
         while i > 0 {
-            targets.append(.init(id: step, previous: i / 10, main: i % 10))
+            targets.append(.init(id: step, maxId: maxId, previous: i / 10, main: i % 10))
             i = i / 10
             step += 1
         }

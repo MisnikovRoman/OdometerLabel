@@ -10,7 +10,8 @@ struct OneNumberAnimationTestView: View {
         isIncreasing: true,
         rounds: 0,
         duration: 1.0,
-        animationToggle: false
+        animationToggle: false,
+        delay: 0.0
     )
     
     var body: some View {
@@ -21,7 +22,7 @@ struct OneNumberAnimationTestView: View {
             
             HStack {
                 Text("👉")
-                OneRollingNumberView(target: .init(id: 0, previous: 0, main: 0), debug: debugData)
+                OneRollingNumberView(target: .zero, debug: debugData)
                 Text("👈")
             }
             
@@ -64,6 +65,11 @@ struct OneNumberAnimationTestView: View {
                     HStack(spacing: 16) {
                         Stepper("⏲ duration", onIncrement: { debugData.duration += 0.2 }, onDecrement: { debugData.duration -= 0.2 })
                         Text("\(debugData.duration, specifier: "%.1f")")
+                            .frame(width: 32)
+                    }
+                    HStack(spacing: 16) {
+                        Stepper("🙇‍♂️ delay", onIncrement: { debugData.delay += 0.2 }, onDecrement: { debugData.delay -= 0.2 })
+                        Text("\(debugData.delay, specifier: "%.1f")")
                             .frame(width: 32)
                     }
                 }

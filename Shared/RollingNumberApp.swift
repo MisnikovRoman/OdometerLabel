@@ -4,7 +4,12 @@ import SwiftUI
 struct RollingNumberApp: App {
     var body: some Scene {
         WindowGroup {
-            OneNumberAnimationTestView() // RollingNumbersTestScreen()
+            TabView {
+                RollingNumbersTestScreen()
+                    .tabItem { Label("Numbers", systemImage: "123.rectangle")}
+                OneNumberAnimationTestView()
+                    .tabItem { Label("Debug", systemImage: "7.square") }
+            }
         }
     }
 }

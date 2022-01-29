@@ -24,7 +24,6 @@
 		032B561127A0413A0054E622 /* Color+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B561027A0413A0054E622 /* Color+random.swift */; };
 		032B561327A041570054E622 /* Numbers+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B561227A041570054E622 /* Numbers+Extensions.swift */; };
 		032B561527A043480054E622 /* TargetNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B561427A043480054E622 /* TargetNumber.swift */; };
-		032B561927A044B40054E622 /* MultipleRollingNumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B561827A044B40054E622 /* MultipleRollingNumbersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -233,7 +232,6 @@
 				032B561327A041570054E622 /* Numbers+Extensions.swift in Sources */,
 				032B560427A00EC10054E622 /* OneNumberAnimationTestView.swift in Sources */,
 				032B560227A00E290054E622 /* View+cornerRadius.swift in Sources */,
-				032B561927A044B40054E622 /* MultipleRollingNumbersView.swift in Sources */,
 				032B560D27A0407E0054E622 /* Animation+curve.swift in Sources */,
 				032B560627A03EE30054E622 /* OneRollingNumberView.swift in Sources */,
 				032B560F27A040F80054E622 /* View+clipped.swift in Sources */,
@@ -385,7 +383,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -415,7 +413,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

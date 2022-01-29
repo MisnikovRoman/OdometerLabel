@@ -7,6 +7,9 @@ struct TargetNumber: Hashable {
     //    n: 2 7 3 8
     let id: Int
     
+    // максимальный id
+    let maxId: Int
+    
     // "кол-во десятков"
     // например, для числа 2738 previous = 273
     let previous: Int
@@ -30,6 +33,6 @@ struct TargetNumber: Hashable {
 
 extension TargetNumber {
     static var zero: Self {
-        .init(id: 0, previous: 0, main: 0)
+        .init(id: 0, maxId: 0, previous: 0, main: 0)
     }
 }
