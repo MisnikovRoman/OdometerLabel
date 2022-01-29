@@ -4,7 +4,7 @@ import SwiftUI
 struct RollingNumberApp: App {
     var body: some Scene {
         WindowGroup {
-            RollingNumbersTestScreen()
+            OneNumberAnimationTestView() // RollingNumbersTestScreen()
         }
     }
 }

@@ -9,21 +9,40 @@
 /* Begin PBXBuildFile section */
 		032B55F1279AF2FE0054E622 /* RollingNumberApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B55E1279AF2FD0054E622 /* RollingNumberApp.swift */; };
 		032B55F2279AF2FE0054E622 /* RollingNumberApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B55E1279AF2FD0054E622 /* RollingNumberApp.swift */; };
-		032B55F3279AF2FE0054E622 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B55E2279AF2FD0054E622 /* ContentView.swift */; };
-		032B55F4279AF2FE0054E622 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B55E2279AF2FD0054E622 /* ContentView.swift */; };
+		032B55F3279AF2FE0054E622 /* RollingNumbersTestScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B55E2279AF2FD0054E622 /* RollingNumbersTestScreen.swift */; };
+		032B55F4279AF2FE0054E622 /* RollingNumbersTestScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B55E2279AF2FD0054E622 /* RollingNumbersTestScreen.swift */; };
 		032B55F5279AF2FE0054E622 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 032B55E3279AF2FE0054E622 /* Assets.xcassets */; };
 		032B55F6279AF2FE0054E622 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 032B55E3279AF2FE0054E622 /* Assets.xcassets */; };
-		032B5600279B05A40054E622 /* TestRepeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B55FF279B05A40054E622 /* TestRepeat.swift */; };
+		032B560227A00E290054E622 /* View+cornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B560127A00E290054E622 /* View+cornerRadius.swift */; };
+		032B560427A00EC10054E622 /* OneNumberAnimationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B560327A00EC10054E622 /* OneNumberAnimationTestView.swift */; };
+		032B560627A03EE30054E622 /* OneRollingNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B560527A03EE30054E622 /* OneRollingNumberView.swift */; };
+		032B560727A03FAD0054E622 /* View+cornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B560127A00E290054E622 /* View+cornerRadius.swift */; };
+		032B560827A03FAD0054E622 /* OneNumberAnimationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B560327A00EC10054E622 /* OneNumberAnimationTestView.swift */; };
+		032B560927A03FAD0054E622 /* OneRollingNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B560527A03EE30054E622 /* OneRollingNumberView.swift */; };
+		032B560D27A0407E0054E622 /* Animation+curve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B560C27A0407E0054E622 /* Animation+curve.swift */; };
+		032B560F27A040F80054E622 /* View+clipped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B560E27A040F80054E622 /* View+clipped.swift */; };
+		032B561127A0413A0054E622 /* Color+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B561027A0413A0054E622 /* Color+random.swift */; };
+		032B561327A041570054E622 /* Numbers+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B561227A041570054E622 /* Numbers+Extensions.swift */; };
+		032B561527A043480054E622 /* TargetNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B561427A043480054E622 /* TargetNumber.swift */; };
+		032B561927A044B40054E622 /* MultipleRollingNumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B561827A044B40054E622 /* MultipleRollingNumbersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		032B55E1279AF2FD0054E622 /* RollingNumberApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingNumberApp.swift; sourceTree = "<group>"; };
-		032B55E2279AF2FD0054E622 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		032B55E2279AF2FD0054E622 /* RollingNumbersTestScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingNumbersTestScreen.swift; sourceTree = "<group>"; };
 		032B55E3279AF2FE0054E622 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		032B55E8279AF2FE0054E622 /* RollingNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RollingNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		032B55EE279AF2FE0054E622 /* RollingNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RollingNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		032B55F0279AF2FE0054E622 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		032B55FF279B05A40054E622 /* TestRepeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRepeat.swift; sourceTree = "<group>"; };
+		032B560127A00E290054E622 /* View+cornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+cornerRadius.swift"; sourceTree = "<group>"; };
+		032B560327A00EC10054E622 /* OneNumberAnimationTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneNumberAnimationTestView.swift; sourceTree = "<group>"; };
+		032B560527A03EE30054E622 /* OneRollingNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRollingNumberView.swift; sourceTree = "<group>"; };
+		032B560C27A0407E0054E622 /* Animation+curve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation+curve.swift"; sourceTree = "<group>"; };
+		032B560E27A040F80054E622 /* View+clipped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+clipped.swift"; sourceTree = "<group>"; };
+		032B561027A0413A0054E622 /* Color+random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+random.swift"; sourceTree = "<group>"; };
+		032B561227A041570054E622 /* Numbers+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numbers+Extensions.swift"; sourceTree = "<group>"; };
+		032B561427A043480054E622 /* TargetNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetNumber.swift; sourceTree = "<group>"; };
+		032B561827A044B40054E622 /* MultipleRollingNumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleRollingNumbersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +66,6 @@
 		032B55DB279AF2FD0054E622 = {
 			isa = PBXGroup;
 			children = (
-				032B55FF279B05A40054E622 /* TestRepeat.swift */,
 				032B55E0279AF2FD0054E622 /* Shared */,
 				032B55EF279AF2FE0054E622 /* macOS */,
 				032B55E9279AF2FE0054E622 /* Products */,
@@ -58,7 +76,9 @@
 			isa = PBXGroup;
 			children = (
 				032B55E1279AF2FD0054E622 /* RollingNumberApp.swift */,
-				032B55E2279AF2FD0054E622 /* ContentView.swift */,
+				032B561627A043F40054E622 /* Models */,
+				032B561727A043FB0054E622 /* Views */,
+				032B560B27A0405A0054E622 /* Extensions */,
 				032B55E3279AF2FE0054E622 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -79,6 +99,37 @@
 				032B55F0279AF2FE0054E622 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		032B560B27A0405A0054E622 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				032B560E27A040F80054E622 /* View+clipped.swift */,
+				032B560127A00E290054E622 /* View+cornerRadius.swift */,
+				032B561027A0413A0054E622 /* Color+random.swift */,
+				032B560C27A0407E0054E622 /* Animation+curve.swift */,
+				032B561227A041570054E622 /* Numbers+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		032B561627A043F40054E622 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				032B561427A043480054E622 /* TargetNumber.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		032B561727A043FB0054E622 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				032B560527A03EE30054E622 /* OneRollingNumberView.swift */,
+				032B55E2279AF2FD0054E622 /* RollingNumbersTestScreen.swift */,
+				032B560327A00EC10054E622 /* OneNumberAnimationTestView.swift */,
+				032B561827A044B40054E622 /* MultipleRollingNumbersView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,9 +230,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				032B55F3279AF2FE0054E622 /* ContentView.swift in Sources */,
+				032B561327A041570054E622 /* Numbers+Extensions.swift in Sources */,
+				032B560427A00EC10054E622 /* OneNumberAnimationTestView.swift in Sources */,
+				032B560227A00E290054E622 /* View+cornerRadius.swift in Sources */,
+				032B561927A044B40054E622 /* MultipleRollingNumbersView.swift in Sources */,
+				032B560D27A0407E0054E622 /* Animation+curve.swift in Sources */,
+				032B560627A03EE30054E622 /* OneRollingNumberView.swift in Sources */,
+				032B560F27A040F80054E622 /* View+clipped.swift in Sources */,
+				032B55F3279AF2FE0054E622 /* RollingNumbersTestScreen.swift in Sources */,
 				032B55F1279AF2FE0054E622 /* RollingNumberApp.swift in Sources */,
-				032B5600279B05A40054E622 /* TestRepeat.swift in Sources */,
+				032B561527A043480054E622 /* TargetNumber.swift in Sources */,
+				032B561127A0413A0054E622 /* Color+random.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,8 +248,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				032B55F4279AF2FE0054E622 /* ContentView.swift in Sources */,
+				032B55F4279AF2FE0054E622 /* RollingNumbersTestScreen.swift in Sources */,
+				032B560727A03FAD0054E622 /* View+cornerRadius.swift in Sources */,
+				032B560827A03FAD0054E622 /* OneNumberAnimationTestView.swift in Sources */,
 				032B55F2279AF2FE0054E622 /* RollingNumberApp.swift in Sources */,
+				032B560927A03FAD0054E622 /* OneRollingNumberView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
