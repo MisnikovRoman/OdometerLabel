@@ -32,7 +32,7 @@ struct RollingNumberLabel: View {
 
 struct RollingNumberLabelTestScreen: View {
     @State private var number = 0
-    @State private var total = 50000
+    @State private var total = 5000
     @State private var enteredAmount = 0
     
     @State private var settings = RollingNumberLabel.Settings(
@@ -51,7 +51,7 @@ struct RollingNumberLabelTestScreen: View {
                         .modifier(RoundedSquareProgressModifier(
                             total: 1.0,
                             value: number.double / total.double,
-                            animation: .easeInOut(duration: settings.numberAnimationDuration)
+                            animation: .easeInOut(duration: totalAnimationTime)
                         ))
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Робот-пылесос")
@@ -90,7 +90,7 @@ struct RollingNumberLabelTestScreen: View {
             Section {
                 LabeledTextNumberFieldView(title: "duration", number: $settings.numberAnimationDuration, step: 0.1)
             } footer: {
-                Text("Длительность анимации каждой цифры")
+                Text("Длительность анимации каждой цифры. С учетом задержки общее время анимации - \(totalAnimationTime.toString())")
             }
 
             Section {
@@ -99,6 +99,12 @@ struct RollingNumberLabelTestScreen: View {
                 }
             }
         }
+    }
+    
+    var totalAnimationTime: Double {
+        let numbersCount = enteredAmount.toString().count
+        let lastNumberDelay = (numbersCount - 1).double * settings.interNumberDelay
+        return lastNumberDelay + settings.numberAnimationDuration
     }
 }
 
