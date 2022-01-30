@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		032B55F1279AF2FE0054E622 /* RollingNumberApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B55E1279AF2FD0054E622 /* RollingNumberApp.swift */; };
 		032B55F2279AF2FE0054E622 /* RollingNumberApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B55E1279AF2FD0054E622 /* RollingNumberApp.swift */; };
-		032B55F3279AF2FE0054E622 /* RollingNumbersTestScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B55E2279AF2FD0054E622 /* RollingNumbersTestScreen.swift */; };
-		032B55F4279AF2FE0054E622 /* RollingNumbersTestScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B55E2279AF2FD0054E622 /* RollingNumbersTestScreen.swift */; };
 		032B55F5279AF2FE0054E622 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 032B55E3279AF2FE0054E622 /* Assets.xcassets */; };
 		032B55F6279AF2FE0054E622 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 032B55E3279AF2FE0054E622 /* Assets.xcassets */; };
 		032B560227A00E290054E622 /* View+cornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B560127A00E290054E622 /* View+cornerRadius.swift */; };
@@ -24,11 +22,13 @@
 		032B561127A0413A0054E622 /* Color+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B561027A0413A0054E622 /* Color+random.swift */; };
 		032B561327A041570054E622 /* Numbers+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B561227A041570054E622 /* Numbers+Extensions.swift */; };
 		032B561527A043480054E622 /* TargetNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B561427A043480054E622 /* TargetNumber.swift */; };
+		7C3B132F27A6A1D000A1E3A3 /* RollingNumberLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3B132E27A6A1D000A1E3A3 /* RollingNumberLabel.swift */; };
+		7C3B133427A6ACE200A1E3A3 /* RoundedSquareProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3B133227A6ACE200A1E3A3 /* RoundedSquareProgressViewStyle.swift */; };
+		7C3B133527A6ACE200A1E3A3 /* RoundedSquareProgressModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3B133327A6ACE200A1E3A3 /* RoundedSquareProgressModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		032B55E1279AF2FD0054E622 /* RollingNumberApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingNumberApp.swift; sourceTree = "<group>"; };
-		032B55E2279AF2FD0054E622 /* RollingNumbersTestScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingNumbersTestScreen.swift; sourceTree = "<group>"; };
 		032B55E3279AF2FE0054E622 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		032B55E8279AF2FE0054E622 /* RollingNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RollingNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		032B55EE279AF2FE0054E622 /* RollingNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RollingNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,7 +41,9 @@
 		032B561027A0413A0054E622 /* Color+random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+random.swift"; sourceTree = "<group>"; };
 		032B561227A041570054E622 /* Numbers+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numbers+Extensions.swift"; sourceTree = "<group>"; };
 		032B561427A043480054E622 /* TargetNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetNumber.swift; sourceTree = "<group>"; };
-		032B561827A044B40054E622 /* MultipleRollingNumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleRollingNumbersView.swift; sourceTree = "<group>"; };
+		7C3B132E27A6A1D000A1E3A3 /* RollingNumberLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingNumberLabel.swift; sourceTree = "<group>"; };
+		7C3B133227A6ACE200A1E3A3 /* RoundedSquareProgressViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedSquareProgressViewStyle.swift; sourceTree = "<group>"; };
+		7C3B133327A6ACE200A1E3A3 /* RoundedSquareProgressModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedSquareProgressModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,12 +125,21 @@
 		032B561727A043FB0054E622 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7C3B133627A6ACED00A1E3A3 /* ProgressView */,
 				032B560527A03EE30054E622 /* OneRollingNumberView.swift */,
-				032B55E2279AF2FD0054E622 /* RollingNumbersTestScreen.swift */,
+				7C3B132E27A6A1D000A1E3A3 /* RollingNumberLabel.swift */,
 				032B560327A00EC10054E622 /* OneNumberAnimationTestView.swift */,
-				032B561827A044B40054E622 /* MultipleRollingNumbersView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7C3B133627A6ACED00A1E3A3 /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				7C3B133327A6ACE200A1E3A3 /* RoundedSquareProgressModifier.swift */,
+				7C3B133227A6ACE200A1E3A3 /* RoundedSquareProgressViewStyle.swift */,
+			);
+			path = ProgressView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,11 +242,13 @@
 			files = (
 				032B561327A041570054E622 /* Numbers+Extensions.swift in Sources */,
 				032B560427A00EC10054E622 /* OneNumberAnimationTestView.swift in Sources */,
+				7C3B133427A6ACE200A1E3A3 /* RoundedSquareProgressViewStyle.swift in Sources */,
 				032B560227A00E290054E622 /* View+cornerRadius.swift in Sources */,
 				032B560D27A0407E0054E622 /* Animation+curve.swift in Sources */,
 				032B560627A03EE30054E622 /* OneRollingNumberView.swift in Sources */,
+				7C3B133527A6ACE200A1E3A3 /* RoundedSquareProgressModifier.swift in Sources */,
 				032B560F27A040F80054E622 /* View+clipped.swift in Sources */,
-				032B55F3279AF2FE0054E622 /* RollingNumbersTestScreen.swift in Sources */,
+				7C3B132F27A6A1D000A1E3A3 /* RollingNumberLabel.swift in Sources */,
 				032B55F1279AF2FE0054E622 /* RollingNumberApp.swift in Sources */,
 				032B561527A043480054E622 /* TargetNumber.swift in Sources */,
 				032B561127A0413A0054E622 /* Color+random.swift in Sources */,
@@ -246,7 +259,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				032B55F4279AF2FE0054E622 /* RollingNumbersTestScreen.swift in Sources */,
 				032B560727A03FAD0054E622 /* View+cornerRadius.swift in Sources */,
 				032B560827A03FAD0054E622 /* OneNumberAnimationTestView.swift in Sources */,
 				032B55F2279AF2FE0054E622 /* RollingNumberApp.swift in Sources */,

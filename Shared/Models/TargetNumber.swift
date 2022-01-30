@@ -18,6 +18,9 @@ struct TargetNumber: Hashable {
     // например, для числа 2738 main = 8
     let main: Int
     
+    // оригинальное число
+    let origin: Int
+    
     var lapTime: Double {
         0.3 * id.double + 0.2
     }
@@ -33,6 +36,6 @@ struct TargetNumber: Hashable {
 
 extension TargetNumber {
     static var zero: Self {
-        .init(id: 0, maxId: 0, previous: 0, main: 0)
+        .init(id: 0, maxId: 0, previous: 0, main: 0, origin: 0)
     }
 }

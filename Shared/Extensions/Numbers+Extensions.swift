@@ -6,6 +6,8 @@ extension Int {
     }
     
     func splitToTargets() -> [TargetNumber] {
+        guard self != 0 else { return [.zero] }
+        
         var i = self
         var targets = [TargetNumber]()
         var step = 0
@@ -13,7 +15,7 @@ extension Int {
         let maxId = String(self).count - 1
         
         while i > 0 {
-            targets.append(.init(id: step, maxId: maxId, previous: i / 10, main: i % 10))
+            targets.append(.init(id: step, maxId: maxId, previous: i / 10, main: i % 10, origin: self))
             i = i / 10
             step += 1
         }

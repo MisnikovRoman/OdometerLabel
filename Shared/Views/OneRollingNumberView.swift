@@ -15,10 +15,12 @@ struct OneRollingNumberView: View {
     }
     
     let target: TargetNumber
+    let settings: RollingNumberLabel.Settings
     let debug: Debug
     
-    init(target: TargetNumber, debug: Debug? = nil) {
+    init(target: TargetNumber, settings: RollingNumberLabel.Settings = .basic, debug: Debug? = nil) {
         self.target = target
+        self.settings = settings
         self.debug = debug ?? .init(isClipped: true, showBorder: false, from: 0, to: 0, isIncreasing: true, rounds: 0, duration: 1.0, animationToggle: false, delay: 0.0)
     }
     
@@ -38,10 +40,24 @@ struct OneRollingNumberView: View {
              animateWithOneExtraRound(from: target, to: new)
         }
         .onAppear {
-            directionalAnimate(from: 0, to: target.main, isIncreasing: true, fullRoundsCount: 1, duration: 1.5, delay: target.currentNumberAnimationDelay)
+            directionalAnimate(
+                from: 0,
+                to: target.main,
+                isIncreasing: true,
+                fullRoundsCount: settings.rounds,
+                duration: settings.numberAnimationDuration,
+                delay: target.id.double * settings.interNumberDelay
+            )
         }
         .onDisappear {
-            directionalAnimate(from: target.main, to: 0, isIncreasing: false, fullRoundsCount: 1, duration: 1.5, delay: target.currentNumberAnimationDelay)
+            directionalAnimate(
+                from: target.main,
+                to: 0,
+                isIncreasing: false,
+                fullRoundsCount: settings.rounds,
+                duration: settings.numberAnimationDuration,
+                delay: target.id.double * settings.interNumberDelay
+            )
         }
         .onChange(of: debug.animationToggle) { new in
             directionalAnimate(from: debug.from, to: debug.to, isIncreasing: debug.isIncreasing, fullRoundsCount: debug.rounds, duration: debug.duration, delay: debug.delay)
@@ -53,73 +69,6 @@ struct OneRollingNumberView: View {
     }
     
     // MARK: - Animation
-
-    /// change 25 -> 369 344
-    /// 0 9 -> 34 3 оборота  0.3
-    /// 1 6 -> 3  0.6
-    /// 2 3 -> 0  1.0
-    func smartAnimate(from oldTarget: TargetNumber, to newTarget: TargetNumber) {
-        
-        let totalSteps = oldTarget.steps(to: newTarget)
-        let totalAnimationTime = 1.0
-        let stepDuration = totalAnimationTime / totalSteps.double
-        
-        let previousDiff = newTarget.previous - oldTarget.previous
-        
-        if previousDiff == 0 {
-            // десятки не изменились, простая анимация к новому числу
-            dummyAnimate(from: oldTarget.main, to: newTarget.main, duration: totalAnimationTime)
-        } else if previousDiff < 0 {
-//            // предыдущее число изменилось (нужно сделать несколько переходов через 0 в обратную сторону)
-//            // уменьшаем до нуля
-//            let t1 = oldTarget.main.double * stepDuration
-//            directAnimate(from: oldTarget.main, to: 0, duration: t1)
-//
-//            let fullCircleRepeats = 1 + previousDiff
-//            let oneLapTime = stepDuration * 10.0
-//            let t2 = fullCircleRepeats.double * oneLapTime
-//            if fullCircleRepeats < 0 {
-//                // сколько раз повторить полный круг анимаций 9 -> 0
-//                directAnimate(from: 10, to: 0, repeatCount: fullCircleRepeats, duration: oneLapTime, delay: t1)
-//            }
-//
-//            // последний шаг возвращаемся от 0 справа (10) в нужное число
-//            let t3 = (10 - newTarget.main).double * stepDuration
-//            directAnimate(from: 10, to: newTarget.main, duration: t3, delay: t1 + t2)
-//            print("ID: \(target.id)", t1, t2, t3)
-            
-            // ⚠️ DELETE
-            dummyAnimate(from: oldTarget.main, to: newTarget.main, duration: totalAnimationTime)
-            
-        } else if previousDiff == 1 {
-            let t1 = stepDuration * (10.0 - oldTarget.main.double)
-            dummyAnimate(from: oldTarget.main, to: 10, duration: t1)
-            let t2 = stepDuration * newTarget.main.double
-            dummyAnimate(from: 0, to: newTarget.main, duration: t2, delay: t1)
-        } else if previousDiff > 1 {
-            // если нужно сделать несколько полных оборотов
-            
-            let maxFullCircleRepeats = 5
-            let fullCircleRepeats = min(previousDiff - 1, maxFullCircleRepeats) // обрезаем кол-во оборотов
-             
-            let stepsCount1 = 10 - oldTarget.main // увеличиваем до 10 (дальний ноль)
-            let stepsCount2 = 10 * fullCircleRepeats // делаем несколько полных оборотов
-            let stepsCount3 = newTarget.main // доходим до нужного числа от 0
-            
-            let totalEditedSteps = stepsCount1 + stepsCount2 + stepsCount3 // новое кол-во шагов
-            let editedStepDuration = totalAnimationTime / totalEditedSteps.double // новое время шага
-            
-            let t1 = stepsCount1.double * editedStepDuration // время первой части анимации
-            let t2 = stepsCount2.double * editedStepDuration // время второй части анимации
-            let t3 = stepsCount3.double * editedStepDuration // время третьей части анимации
-            
-            dummyAnimate(from: oldTarget.main, to: 10, duration: t1) //
-            dummyAnimate(from: 0, to: 10, repeatCount: fullCircleRepeats, duration: t2 / fullCircleRepeats.double, delay: t1)
-            dummyAnimate(from: 0, to: newTarget.main, duration: t3, delay: t1 + t2)
-            
-            print("ID: \(target.id)", t1, t2, t3)
-        }
-    }
     
     /// Прямая анимация от одного числа к другому
     /// - Parameters:
@@ -203,20 +152,18 @@ struct OneRollingNumberView: View {
     }
     
     func animateWithOneExtraRound(from oldTarget: TargetNumber, to newTarget: TargetNumber) {
-        directionalAnimate(from: oldTarget.main, to: newTarget.main, isIncreasing: true, fullRoundsCount: 1, duration: 1.5, delay: newTarget.currentNumberAnimationDelay)
-    }
-}
-
-extension TargetNumber {
-    
-    // нумерация чисел слева направо
-    var leftToRightId: Int {
-        maxId - id
-    }
-    
-    var currentNumberAnimationDelay: Double {
-        let interNumberDelay = 0.2 // задержка старта анимации между данным числом и соседом слева
-        return id.double * interNumberDelay
+        
+        let isIncreasing = newTarget.origin > oldTarget.origin
+        let delay = newTarget.id.double * settings.interNumberDelay
+        
+        directionalAnimate(
+            from: oldTarget.main,
+            to: newTarget.main,
+            isIncreasing: isIncreasing,
+            fullRoundsCount: settings.rounds,
+            duration: settings.numberAnimationDuration,
+            delay: delay
+        )
     }
 }
 
